@@ -1,0 +1,1527 @@
+/********** Template CSS **********/
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 600;
+    transition: .5s;
+    border-radius: 50px;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: inherit;
+}
+
+.btn-primary {
+    color: var(--bs-white);
+}
+
+
+/*** Navbar ***/
+.navbar {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    transition: .5s;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 25px;
+    padding: 40px 0;
+    color: var(--bs-white);
+    font-size: 17px;
+    text-transform: uppercase;
+    outline: none;
+    transition: .5s;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--bs-primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link,
+    .navbar.bg-dark .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        margin-top: 8px;
+        border-top: 1px solid var(--bs-light);
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.bg-dark .navbar-nav .nav-link {
+        padding: 20px 0;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+
+/*** Header ***/
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 100px;
+    background: rgba(0, 0, 0, .7);
+    z-index: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        position: relative;
+        min-height: 550px;
+    }
+    
+    #header-carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.page-header {
+    padding-top: 200px;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/carousel-1.jpg) top center no-repeat;
+    background-size: cover;
+}
+
+.page-header .breadcrumb-item + .breadcrumb-item::before {
+    color: var(--bs-white);
+}
+
+
+/*** Title ***/
+.title {
+    margin-bottom: 2rem;
+}
+
+.title .title-left,
+.title .title-center,
+.title .title-right {
+    display: inline-block;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.title .title-center {
+    text-align: center;
+}
+
+.title .title-right {
+    text-align: right;
+}
+
+.title .title-left h5,
+.title .title-center h5,
+.title .title-right h5 {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.title .title-left h5::after,
+.title .title-center h5::before,
+.title .title-center h5::after,
+.title .title-right h5::before {
+    position: absolute;
+    content: "";
+    width: 500%;
+    height: 0;
+    top: 9px;
+    border-bottom: 1px solid var(--bs-white);
+}
+
+.title .title-left h5::after,
+.title .title-center h5::after {
+    left: calc(100% + 15px);
+}
+
+.title .title-right h5::before,
+.title .title-center h5::before {
+    right: calc(100% + 15px);
+}
+
+.title .title-left h1,
+.title .title-center h1,
+.title .title-right h1 {
+    border-bottom: 1px solid var(--bs-white);
+}
+
+
+/*** Service ***/
+.service-item {
+    position: relative;
+    margin-top: 2.5rem;
+    overflow: hidden;
+}
+
+.service-item .service-img {
+    position: relative;
+    display: inline-block;
+}
+
+.service-item .service-img::before {
+    position: absolute;
+    content: "";
+    width: calc(100% - 12rem);
+    height: calc(100% - 12rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3rem solid rgba(0, 0, 0, .5);
+    border-radius: 300px;
+    z-index: 1;
+}
+
+.service-item.service-item-left {
+    border-radius: 500px 0 0 500px;
+    background: linear-gradient(to right, var(--bs-secondary), var(--bs-dark));
+}
+
+.service-item.service-item-right {
+    border-radius: 0 500px 500px 0;
+    background: linear-gradient(to left, var(--bs-secondary), var(--bs-dark));
+}
+
+@media (max-width: 767.98px) {
+    .service-item.service-item-left,
+    .service-item.service-item-right {
+        border-radius: 500px 500px 0 0;
+        background: linear-gradient(to bottom, var(--bs-secondary), var(--bs-dark));
+        text-align: center;
+    }
+}
+
+
+/*** Team ***/
+.team-item {
+    position: relative;
+}
+
+.team-item .team-name {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .7);
+}
+
+.team-item .team-body {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-item .team-body .team-before,
+.team-item .team-body .team-after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: calc(100% - 60px);
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: .5s;
+}
+
+.team-item .team-body .team-after {
+    left: auto;
+    right: 0;
+}
+
+.team-item .team-body .team-before {
+    text-align: right;
+}
+
+.team-item:hover .team-body .team-before,
+.team-item:hover .team-body .team-after {
+    width: 50%;
+}
+
+.team-item .team-body .team-before span,
+.team-item .team-body .team-after span {
+    margin: 5px;
+    color: var(--bs-white);
+    opacity: 0;
+    transition: .5s;
+}
+
+.team-item:hover .team-body .team-before span,
+.team-item:hover .team-body .team-after span {
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 35px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dots .owl-dot {
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
+    padding: 10px;
+    background: var(--bs-dark);
+    border-radius: 100px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dots .owl-dot.active {
+    width: 100px;
+    height: 100px;
+}
+
+.testimonial-carousel .owl-dots .owl-dot img {
+    opacity: .1;
+    transition: .5s;
+    border-radius: 100px;
+}
+
+.testimonial-carousel .owl-dots .owl-dot.active img {
+    opacity: 1;
+}
+
+
+/*** Footer ***/
+@keyframes footerAnimatedBg {
+	0% {
+        background-position: 0 0;
+    }
+
+	100% {
+        background-position: -1000px 0;
+    }
+}
+
+.footer {
+	background-image: url(../img/footer-bg.png);
+	background-position: 0px 0px;
+    background-repeat: repeat-x;
+	animation: footerAnimatedBg 50s linear infinite;
+}/************************************************/
+/* FINAL MOBILE RESPONSIVE FIX */
+/* DEWANGGA GYM */
+/************************************************/
+
+
+/* ===============================
+GLOBAL FIX
+================================*/
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+
+.container,
+.container-fluid {
+    width:100%;
+}
+
+
+/* Semua text tidak keluar layar */
+
+h1,h2,h3,h4,h5,p,span,td,th {
+
+    word-wrap:break-word;
+    overflow-wrap:break-word;
+
+}
+
+
+
+/* ===============================
+IMAGE FIX
+================================*/
+
+
+img {
+
+    max-width:100%;
+    height:auto;
+    object-fit:cover;
+
+}
+
+
+
+/* ===============================
+DETAIL RIWAYAT FIX
+================================*/
+
+
+/* Paksa layout dua kolom menjadi satu di HP */
+
+@media(max-width:768px){
+
+
+    .row {
+
+        display:flex;
+        flex-direction:column;
+
+    }
+
+
+
+    .col-md-6,
+    .col-lg-6 {
+
+        width:100% !important;
+        max-width:100% !important;
+        flex:0 0 100% !important;
+
+    }
+
+
+
+}
+
+
+
+/* ===============================
+CARD FIX
+================================*/
+
+
+.card {
+
+
+    height:auto !important;
+    min-height:0 !important;
+    overflow:visible !important;
+
+
+}
+
+
+
+.card-body {
+
+
+    height:auto !important;
+    overflow:visible !important;
+
+
+}
+
+
+
+
+
+/* ===============================
+TABLE DETAIL FIX
+================================*/
+
+
+.card table {
+
+
+    width:100% !important;
+    table-layout:fixed;
+
+
+}
+
+
+
+.card table tr {
+
+
+    display:table-row !important;
+
+
+}
+
+
+
+.card table th {
+
+
+    width:40%;
+    white-space:normal !important;
+    vertical-align:top;
+
+
+}
+
+
+
+.card table td {
+
+
+    width:60%;
+    white-space:normal !important;
+    word-break:break-word;
+
+
+}
+
+
+
+
+@media(max-width:576px){
+
+
+.card table {
+
+
+    display:block;
+
+}
+
+
+.card table tbody {
+
+
+    display:block;
+
+}
+
+
+
+.card table tr {
+
+
+    display:flex !important;
+    flex-direction:column;
+    padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,.2);
+
+
+}
+
+
+
+.card table th,
+.card table td {
+
+
+    width:100% !important;
+    display:block !important;
+    text-align:left;
+
+
+}
+
+
+
+.card table th {
+
+
+    color:#0d6efd !important;
+    font-size:13px;
+
+
+}
+
+
+
+.card table td {
+
+
+    color:white !important;
+    font-size:14px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+/* ===============================
+INFORMASI LATIHAN FIX
+================================*/
+
+
+/* Jangan sembunyikan isi */
+
+.card h3,
+.card p,
+.card table,
+.card .table {
+
+
+    opacity:1 !important;
+    visibility:visible !important;
+    display:block;
+
+
+}
+
+
+
+.card .table tr {
+
+
+    opacity:1 !important;
+    visibility:visible !important;
+
+
+}
+
+
+
+
+
+/* ===============================
+VIDEO FIX
+================================*/
+
+
+.ratio {
+
+
+    width:100%;
+    height:auto;
+
+
+}
+
+
+
+video {
+
+
+    width:100% !important;
+    height:auto !important;
+    display:block !important;
+
+
+}
+
+
+
+/* ===============================
+BUTTON FIX
+================================*/
+
+
+@media(max-width:576px){
+
+
+.text-center .btn {
+
+
+    width:100%;
+    margin-bottom:15px;
+
+
+}
+
+
+}
+
+
+
+/* ===============================
+HEADER MOBILE
+================================*/
+
+
+@media(max-width:576px){
+
+
+.page-header {
+
+
+    padding-top:120px !important;
+    padding-bottom:60px !important;
+
+
+}
+
+
+.page-header h1 {
+
+
+    font-size:28px !important;
+
+
+}
+
+
+
+.page-header p {
+
+
+    font-size:14px !important;
+
+
+}
+
+
+
+}
+
+
+
+/* ===============================
+NAVBAR FIX
+================================*/
+
+
+@media(max-width:991px){
+
+
+.navbar {
+
+
+    position:relative !important;
+
+
+}
+
+
+.navbar-nav {
+
+
+    background:#111;
+
+
+}
+
+
+.nav-link {
+
+
+    padding:12px !important;
+
+
+}
+
+
+
+}
+
+
+
+/* ===============================
+HOME CAROUSEL FIX
+================================*/
+
+
+@media(max-width:576px){
+
+
+.carousel-item {
+
+
+    min-height:500px;
+
+
+}
+
+
+.carousel-item img {
+
+
+    height:500px !important;
+    object-fit:cover;
+
+
+}
+
+
+.carousel-caption h1 {
+
+
+    font-size:26px !important;
+
+
+}
+
+
+
+.carousel-caption p {
+
+
+    font-size:14px !important;
+
+
+}
+
+
+
+}
+
+
+
+
+
+/* ===============================
+ANTI HORIZONTAL SCROLL
+================================*/
+
+
+table {
+
+    max-width:100%;
+
+}
+
+
+
+.row {
+
+    margin-left:0;
+    margin-right:0;
+
+}/********************************/
+/* NAVBAR BUTTON MOBILE FIX */
+/********************************/
+
+.navbar .d-flex.align-items-center {
+    margin-right:20px;
+}
+
+
+@media(max-width:991px){
+
+    .navbar .d-flex.align-items-center {
+
+        width:100%;
+        justify-content:center;
+        padding-bottom:15px;
+
+    }
+
+
+    .navbar .d-flex.align-items-center .btn {
+
+        width:90%;
+        text-align:center;
+
+    }
+
+
+}/************************************************/
+/* GLOBAL RESPONSIVE FIX - DEWANGGA GYM */
+/************************************************/
+
+
+/* Mencegah halaman melebar di HP */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* Semua gambar responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Container agar tidak terlalu mepet */
+.container,
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+/************************************************/
+/* FONT RESPONSIVE */
+/************************************************/
+
+body {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+h1 {
+    font-size: clamp(26px, 5vw, 48px);
+}
+
+
+h2 {
+    font-size: clamp(22px, 4vw, 36px);
+}
+
+
+h3 {
+    font-size: clamp(18px, 3vw, 28px);
+}
+
+
+p {
+    font-size: clamp(14px, 2vw, 17px);
+}
+
+
+
+/************************************************/
+/* NAVBAR MOBILE */
+/************************************************/
+
+@media(max-width:991px){
+
+    .navbar {
+        position: relative;
+    }
+
+
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+
+    .navbar-nav {
+        text-align:center;
+    }
+
+
+    .navbar .nav-link {
+        padding:10px 0 !important;
+        margin:0 !important;
+        font-size:14px;
+    }
+
+}
+
+
+
+/************************************************/
+/* HEADER / CAROUSEL */
+/************************************************/
+
+
+.carousel-item img {
+
+    width:100%;
+    height:650px;
+    object-fit:cover;
+
+}
+
+
+
+.carousel-caption {
+
+    padding:20px;
+}
+
+
+
+@media(max-width:768px){
+
+
+    #header-carousel .carousel-item {
+
+        min-height:450px;
+
+    }
+
+
+    #header-carousel .carousel-item img {
+
+        height:450px;
+
+    }
+
+
+    .carousel-caption {
+
+        padding:20px 15px;
+
+    }
+
+
+    .carousel-caption h1 {
+
+        font-size:28px;
+
+    }
+
+
+    .carousel-caption p {
+
+        font-size:14px;
+
+    }
+
+}
+
+
+
+
+/************************************************/
+/* BUTTON */
+/************************************************/
+
+
+.btn {
+
+    white-space:normal;
+    max-width:100%;
+
+}
+
+
+@media(max-width:576px){
+
+
+.btn {
+
+    padding:10px 18px;
+    font-size:14px;
+
+}
+
+}
+
+
+
+
+/************************************************/
+/* CARD / BOX */
+/************************************************/
+
+
+.card {
+
+    max-width:100%;
+    overflow:hidden;
+
+}
+
+
+.card img {
+
+    width:100%;
+    height:auto;
+
+}
+
+
+
+.row {
+
+    margin-left:-10px;
+    margin-right:-10px;
+
+}
+
+
+[class*="col-"] {
+
+    padding-left:10px;
+    padding-right:10px;
+
+}
+
+
+
+
+/************************************************/
+/* TABLE RESPONSIVE */
+/************************************************/
+
+
+.table-responsive {
+
+    width:100%;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+
+}
+
+
+table {
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+
+
+table th,
+table td {
+
+
+    padding:10px;
+    vertical-align:middle;
+    white-space:nowrap;
+
+}
+
+
+
+@media(max-width:576px){
+
+
+table {
+
+    font-size:13px;
+
+}
+
+
+table th,
+table td {
+
+    padding:8px;
+
+}
+
+}
+
+
+
+
+/************************************************/
+/* FORM INPUT */
+/************************************************/
+
+
+input,
+select,
+textarea {
+
+    width:100%;
+    max-width:100%;
+
+}
+
+
+
+.form-control {
+
+    height:auto;
+    padding:10px 15px;
+
+}
+
+
+
+@media(max-width:576px){
+
+
+.form-control {
+
+    font-size:14px;
+
+}
+
+
+}
+
+
+
+
+/************************************************/
+/* VIDEO LATIHAN */
+/************************************************/
+
+
+iframe,
+video {
+
+    width:100%;
+    max-width:100%;
+    height:auto;
+
+}
+
+
+.video-container {
+
+    position:relative;
+    width:100%;
+    padding-bottom:56.25%;
+    height:0;
+    overflow:hidden;
+
+}
+
+
+.video-container iframe {
+
+
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+
+}
+
+
+
+/************************************************/
+/* SECTION SPACING */
+/************************************************/
+
+
+section {
+
+    overflow:hidden;
+
+}
+
+
+
+@media(max-width:576px){
+
+
+.py-5 {
+
+    padding-top:40px !important;
+    padding-bottom:40px !important;
+
+}
+
+
+.mt-5 {
+
+    margin-top:30px !important;
+
+}
+
+
+.mb-5 {
+
+    margin-bottom:30px !important;
+
+}
+
+
+}
+
+
+
+/************************************************/
+/* FOOTER MOBILE */
+/************************************************/
+
+
+@media(max-width:768px){
+
+
+.footer {
+
+    text-align:center;
+
+}
+
+
+.footer .row > div {
+
+    margin-bottom:20px;
+
+}
+
+
+}
+
+
+
+
+/************************************************/
+/* BACK TO TOP */
+/************************************************/
+
+
+.back-to-top {
+
+
+    right:15px;
+    bottom:15px;
+
+}
+
+
+@media(max-width:576px){
+
+
+.back-to-top {
+
+    width:40px;
+    height:40px;
+
+}
+
+
+}/************************************************/
+/* RESPONSIVE IMAGE FIX */
+/* DEWANGGA GYM */
+/************************************************/
+
+
+/* Semua gambar agar mengikuti layar */
+img {
+
+    max-width:100%;
+    height:auto;
+    display:block;
+
+}
+
+
+/* ===============================
+CAROUSEL IMAGE
+================================ */
+
+
+#header-carousel .carousel-item img {
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+
+}
+
+
+
+/* ===============================
+IMAGE MOBILE
+================================ */
+
+
+@media(max-width:768px){
+
+
+    img {
+
+        width:100%;
+        height:auto;
+        object-fit:cover;
+
+    }
+
+
+
+    /* Gambar pada card/service */
+
+    .service-img img,
+    .team-body img,
+    .card img {
+
+        width:100%;
+
+        height:220px;
+
+        object-fit:cover;
+
+        border-radius:15px;
+
+    }
+
+
+
+    /* Gambar profil / icon bulat */
+
+    .rounded-circle {
+
+        width:120px !important;
+
+        height:120px !important;
+
+        object-fit:cover;
+
+    }
+
+
+
+    /* Gambar halaman latihan */
+
+    .latihan-img img,
+    .exercise-img img {
+
+        width:100%;
+
+        height:250px;
+
+        object-fit:cover;
+
+        object-position:center;
+
+    }
+
+
+
+    /* Banner / header */
+
+    .page-header {
+
+        background-position:center;
+
+        background-size:cover;
+
+    }
+
+
+
+    /* Video thumbnail */
+
+    .video-thumbnail img {
+
+        width:100%;
+
+        height:220px;
+
+        object-fit:cover;
+
+    }
+
+
+
+}
+
+
+
+/* ===============================
+HP KECIL
+================================ */
+
+
+@media(max-width:375px){
+
+
+    .service-img img,
+    .team-body img,
+    .card img {
+
+        height:180px;
+
+    }
+
+
+    .latihan-img img,
+    .exercise-img img {
+
+        height:200px;
+
+    }
+
+
+}
