@@ -57,19 +57,19 @@ Pengembangan sistem menggunakan model **Waterfall** yang terdiri dari:
 
 ### Halaman Login
 
-Tambahkan screenshot halaman login di sini.
+![Login](screenshots/login.png)
 
-### Halaman Dashboard
+### Dashboard
 
-Tambahkan screenshot dashboard di sini.
+![Dashboard](screenshots/dashboard-admin.png)
 
-### Halaman Input Data
+### Halaman utama
 
-Tambahkan screenshot halaman input data di sini.
+![Input Data](screenshots/utama.png)
 
-### Halaman Hasil Rekomendasi
+### Hasil Rekomendasi
 
-Tambahkan screenshot hasil rekomendasi di sini.
+![Rekomendasi](screenshots/hasil.png)
 
 ## 🧪 Pengujian
 
